@@ -1,0 +1,35 @@
+== Command mode 에서 명령 실행 ==
+
+i: INSERT MODE 실행
+o: 한칸 아래 공백라인을 생성 하면서 INSERT MODE 실행
+A:  해당 라인의 맨 끝으로 커서 이동해서 INSERT MODE 실행
+ESC: COMMAND MODE로 전환
+:! <command>: 편집기 종료 없이 명령어 쉘 명령어 실행
+q: 종료
+q!: 변경사항 저장 없이 강제 종료
+w: 저장  ( w: /path/to/file 다른 위치에 저장)
+wq!: 저장하고 강제 종료
+
+/<문자>: 찾고 싶은 문자로 이동  ( n: 아래에 있는 다음 문자로 이동, N: 위쪽에 있는 다음 문자로 이동)
+
+yy: 복사 ( <N>yy: N라인 복사 ) yy누르기 전 숫자를 입력하면 숫자에 입력된 만큼 라인 복사
+dd: 잘라내기 ( <N>dd: N라인 잘라내기 ) dd누르기 전 숫자를 입력하면 숫자에 입력된 만큼 라인 잘라냄
+
+p: 아래 쪽에 붙여넣기
+
+
+== vim  비쥬얼 모드 ==
+
+Ctrl + v = 블록지정
+x: 지정된 블록 삭제
+
+Shift + v	(영역 선택)
+:norm i 		맨 앞줄에 삽입
+:norm A 		맨 뒤줄에 삽입
+:norm x		한 글자 삭제
+
+== 글로벌 설정 파일 ==
+
+~/.vmirc
+autocmd FileType yaml setlocal ts=2       ## yaml파일일 경우에 tab이 2칸 띄어쓰기로 변경
+set number                                ## vim 편집기로 파일 오픈 시 라인 번호 출력   ( 라인번호 제거는 :set nonu )
